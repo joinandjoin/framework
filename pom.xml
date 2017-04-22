@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.huaixa</groupId>
+	<artifactId>hx.framework</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<name>hx.framework</name>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+
+		<druid-version>1.0.29</druid-version>
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-actuator</artifactId>
+				<version>1.5.2.RELEASE</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>1.5.2.RELEASE</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-cache</artifactId>
+				<version>1.5.2.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-jpa</artifactId>
+				<version>1.5.2.RELEASE</version>
+			</dependency>
+		     <dependency>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-starter-web</artifactId>
+	            <version>1.5.2.RELEASE</version>
+	        </dependency>
+		    <dependency>
+		        <groupId>org.springframework.boot</groupId>
+		        <artifactId>spring-boot-starter-freemarker</artifactId>
+		        <version>1.5.2.RELEASE</version>
+		    </dependency>
+            <dependency>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-starter-amqp</artifactId>
+	            <version>1.5.2.RELEASE</version>
+	        </dependency>
+            <dependency>
+	            <groupId>org.mybatis.spring.boot</groupId>
+	            <artifactId>mybatis-spring-boot-starter</artifactId>
+	            <version>1.2.0</version>
+	        </dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid-version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>21.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.5</version>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-ftp</artifactId>
+        </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>spring-boot-hxframework-autoconfigure</module>
+		<module>hx.framework.common</module>
+		<module>hx.framework.protocol</module>
+		<module>hx.framework.security</module>
+	</modules>
+</project>

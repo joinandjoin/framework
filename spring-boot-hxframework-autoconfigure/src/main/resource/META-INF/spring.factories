@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.spring.boot.hxframework.autoconfigure.beanutils.SpringBeanUtilsAutoConfig,\
+org.spring.boot.hxframework.autoconfigure.idgen.IdGeneratorAutoConfiguration,\
+org.spring.boot.hxframework.autoconfigure.jdbc.CommonDaoAutoConfig
