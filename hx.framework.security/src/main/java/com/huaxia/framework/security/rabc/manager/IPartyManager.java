@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.huaxia.framework.security.rabc.management;
+package com.huaxia.framework.security.rabc.manager;
 
 /**
  * 权限授予对象管理接口，提供对授权对象的基础管理

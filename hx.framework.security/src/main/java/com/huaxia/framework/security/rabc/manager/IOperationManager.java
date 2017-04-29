@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.huaxia.framework.security.rabc.management;
+package com.huaxia.framework.security.rabc.manager;
 
 /**
  * 资源操作管理接口，提供对资源操作的基础管理

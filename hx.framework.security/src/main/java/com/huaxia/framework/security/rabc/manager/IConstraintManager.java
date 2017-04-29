@@ -1,4 +1,4 @@
-package com.huaxia.framework.security.rabc.management;
+package com.huaxia.framework.security.rabc.manager;
 
 public interface IConstraintManager {
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.huaxia.framework.security.rabc.management;
+package com.huaxia.framework.security.rabc.manager;
 
 /**
  * 角色管理接口，提供对角色的基础管理

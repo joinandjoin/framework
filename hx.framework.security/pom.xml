@@ -44,5 +44,10 @@
 	<artifactId>spring-security-jwt</artifactId>
 	
     </dependency>
+        <dependency>
+        <groupId>com.huaixa</groupId>
+        <artifactId>hx.framework.common</artifactId>
+        <version>1.0.0</version>
+    </dependency>
   </dependencies>
 </project>
