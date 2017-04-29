@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import com.huaxia.framework.common.enums.privilege.RabcModelType;
 
 /**
- * 权限对象抽象结构
+ * RABC模型抽象结构
  * 
  * @author shilei
  *
@@ -32,7 +32,6 @@ public interface IRabcModel {
 	
 	Timestamp modelVersion(Timestamp version);
 	
-	IRabcModel relatRightModel(IRabcModel rightModel);
+	String modelValue(String modelValue);
 	
-	IRabcModel relatLeftModel(IRabcModel leftModel);
 }

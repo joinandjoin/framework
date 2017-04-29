@@ -7,6 +7,6 @@ package com.huaxia.framework.security.rabc.manager;
  * @author shilei
  *
  */
-public interface IGroupManager {
+public interface IPrivilegeManager {
 
 }

@@ -6,7 +6,7 @@ package com.huaxia.framework.security.rabc.model;
  * @author shilei
  *
  */
-public interface IRabcRelatModel {
+public interface IRabcRelatModel extends IRabcModel {
 
 	long rightModelNo(long rightModelNo);
 	
