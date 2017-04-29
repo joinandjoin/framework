@@ -9,11 +9,11 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.huaixa.framework.common.database.repository.ICommonDAO;
-import com.huaixa.framework.common.idgenerator.ISequence;
-import com.huaixa.framework.common.idgenerator.ITimeSynchronizer;
-import com.huaixa.framework.common.idgenerator.support.Sequence;
-import com.huaixa.framework.common.idgenerator.support.SequenceNumber;
+import com.huaxia.framework.common.database.repository.ICommonDAO;
+import com.huaxia.framework.common.idgenerator.ISequence;
+import com.huaxia.framework.common.idgenerator.ITimeSynchronizer;
+import com.huaxia.framework.common.idgenerator.support.Sequence;
+import com.huaxia.framework.common.idgenerator.support.SequenceNumber;
 
 
 @Configuration

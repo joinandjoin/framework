@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
-import com.huaixa.framework.common.database.repository.ICommonDAO;
-import com.huaixa.framework.common.database.repository.support.CommonDaoImpl;
+import com.huaxia.framework.common.database.repository.ICommonDAO;
+import com.huaxia.framework.common.database.repository.support.CommonDaoImpl;
 
 @Configuration
 @ConditionalOnClass({LocalContainerEntityManagerFactoryBean.class,SqlSessionFactory.class,JdbcTemplate.class,DataSource.class})

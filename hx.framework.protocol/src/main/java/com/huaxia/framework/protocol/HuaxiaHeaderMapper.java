@@ -9,7 +9,8 @@ import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.HeaderMapper;
 import org.springframework.util.StringUtils;
 
-import com.huaixa.framework.common.utils.DateUtils;
+import com.huaxia.framework.common.utils.DateUtils;
+import com.huaxia.framework.protocol.message.support.HuaxiaHeaders;
 import com.huaxia.middleware.sdk.model.MessageObject;
 
 public class HuaxiaHeaderMapper implements HeaderMapper<MessageObject> {

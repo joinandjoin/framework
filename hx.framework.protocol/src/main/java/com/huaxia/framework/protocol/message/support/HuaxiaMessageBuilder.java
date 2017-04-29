@@ -8,7 +8,6 @@ import org.springframework.util.AlternativeJdkIdGenerator;
 import org.springframework.util.MimeType;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.huaxia.framework.protocol.HuaxiaHeaders;
 
 /**
  * 创建消息工具类，定义消息负载为byte[]类型

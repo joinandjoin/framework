@@ -2,9 +2,9 @@ package org.spring.boot.hxframework.autoconfigure.jdbc;
 
 import java.sql.Timestamp;
 
-import com.huaixa.framework.common.database.repository.ICommonDAO;
-import com.huaixa.framework.common.idgenerator.ITimeSynchronizer;
-import com.huaixa.framework.common.utils.DateUtils;
+import com.huaxia.framework.common.database.repository.ICommonDAO;
+import com.huaxia.framework.common.idgenerator.ITimeSynchronizer;
+import com.huaxia.framework.common.utils.DateUtils;
 
 
 public class TimeSynchronizerImpl implements ITimeSynchronizer{
