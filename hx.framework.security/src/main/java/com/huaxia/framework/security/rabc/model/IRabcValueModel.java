@@ -6,6 +6,6 @@ package com.huaxia.framework.security.rabc.model;
  * @author shilei
  *
  */
-public interface IRabcValueModel extends IRabcModel {
+public interface IRabcValueModel {
 	String modelValue(String modelValue);
 }
