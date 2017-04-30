@@ -8,6 +8,7 @@ import java.util.Map;
 
 import com.huaxia.framework.common.enums.privilege.RabcModelType;
 import com.huaxia.framework.security.rabc.model.IRabcModel;
+import com.huaxia.framework.security.rabc.model.IRabcRelatModel;
 
 /**
  * @author shilei
@@ -53,11 +54,29 @@ public interface IPrivilegeManager {
 	void deleteModel(long modelNo);
 	void batchDeleteModel(List<Long> modelNos);
 	
-	IRabcModel findModelByKey(long modelNo);
-	List<IRabcModel> findModelByCode(String modelCode);
-	List<IRabcModel> findModelByName(String modelName);
+	IRabcModel findModelByKey(long modelNo,RabcModelType type);
+	List<IRabcModel> findModelByCode(String modelCode,RabcModelType type);
+	List<IRabcModel> findModelByName(String modelName,RabcModelType type);
 	
 	//-party:group,party:role,party-group:role,role:permission,permission|role:group,party-group:role-group,party:constraint,role:constraint 操作-
+	void createOrUpdateRelateModel(IRabcRelatModel model);
+	void createOrUpdateRelateModel(long leftModelNo,long rightModelNo,RabcModelType relatType);
+	void batchCreateOrUpdateRelateModel(List<Long> leftModelNos,List<Long> rightModelNos,List<RabcModelType> relatTypes);
+	void batchCreateOrUpdateRelateModel(List<IRabcRelatModel> model);
+	
+	void deleteRelateModel(long relateModelNo);
+	void deleteRelateModel(long leftModelNo, long rigthModelNo);
+	void batchDeleteRelateModel(List<Long> relateModelNos);
+	void batchDeleteRelateModel(List<Long> leftModelNo, List<Long> rigthModelNo);
+	
+	
+	IRabcRelatModel findRelateModelByKey(long relateModelNo,RabcModelType type);
+	List<IRabcRelatModel> findRelateModelByCode(String relateModelCode,RabcModelType type);
+	List<IRabcRelatModel> findRelateModelByName(String relateModelName,RabcModelType type);
+	List<IRabcRelatModel> findRelateModelByLeftRelatNo(long relatNo,RabcModelType type);
+	List<IRabcRelatModel> findRelateModelByRightRelatNo(long relatNo,RabcModelType type);
+	List<IRabcRelatModel> findRelateModelByLeftRelatNos(List<Long> relatNos,RabcModelType type);
+	List<IRabcRelatModel> findRelateModelByRightRelatNos(List<Long> relatNos,RabcModelType type);
 	
 	//----------------------------permission 操作-------------------------------------
 	

@@ -8,11 +8,12 @@ package com.huaxia.framework.security.rabc.model;
  */
 public interface IRabcRelatModel extends IRabcModel {
 
-	long rightModelNo(long rightModelNo);
-	
 	long leftModelNo(long leftModelNo);
 	
-	IRabcModel relatRightModel(IRabcModel rightModel);
+	long rightModelNo(long rightModelNo);
 	
 	IRabcModel relatLeftModel(IRabcModel leftModel);
+	
+	IRabcModel relatRightModel(IRabcModel rightModel);
+
 }
