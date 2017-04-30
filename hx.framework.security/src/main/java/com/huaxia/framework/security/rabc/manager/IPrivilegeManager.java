@@ -3,13 +3,6 @@
  */
 package com.huaxia.framework.security.rabc.manager;
 
-import java.util.List;
-import java.util.Map;
-
-import com.huaxia.framework.common.enums.privilege.RabcModelType;
-import com.huaxia.framework.security.rabc.model.IRabcModel;
-import com.huaxia.framework.security.rabc.model.IRabcRelatModel;
-
 /**
  * @author shilei
  *
