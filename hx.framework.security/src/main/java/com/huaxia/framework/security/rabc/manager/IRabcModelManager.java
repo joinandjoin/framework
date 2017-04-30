@@ -25,13 +25,12 @@ public interface IRabcModelManager {
 		void createOrUpdateRelateModel(IRabcRelatModel model);
 		void createOrUpdateRelateModel(long leftModelNo,long rightModelNo,RabcModelType relatType);
 		void batchCreateOrUpdateRelateModel(List<Long> leftModelNos,List<Long> rightModelNos,List<RabcModelType> relatTypes);
-		void batchCreateOrUpdateRelateModel(List<IRabcRelatModel> model);
+		void batchCreateOrUpdateRelateModel(List<IRabcRelatModel> model,List<RabcModelType> relatTypes);
 		
 		void deleteRelateModel(long relateModelNo);
 		void deleteRelateModel(long leftModelNo, long rigthModelNo);
 		void batchDeleteRelateModel(List<Long> relateModelNos);
 		void batchDeleteRelateModel(List<Long> leftModelNo, List<Long> rigthModelNo);
-		
 		
 		IRabcRelatModel findRelateModelByKey(long relateModelNo,RabcModelType type);
 		List<IRabcRelatModel> findRelateModelByCode(String relateModelCode,RabcModelType type);
@@ -40,6 +39,5 @@ public interface IRabcModelManager {
 		List<IRabcRelatModel> findRelateModelByRightRelatNo(long relatNo,RabcModelType type);
 		List<IRabcRelatModel> findRelateModelByLeftRelatNos(List<Long> relatNos,RabcModelType type);
 		List<IRabcRelatModel> findRelateModelByRightRelatNos(List<Long> relatNos,RabcModelType type);
-		
-	
+
 }
