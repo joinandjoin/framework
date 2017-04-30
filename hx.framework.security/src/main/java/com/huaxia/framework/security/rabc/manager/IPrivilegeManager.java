@@ -46,7 +46,7 @@ public interface IPrivilegeManager {
 	void deleteConstraint(long constraintNo);
 	IRabcModel findConstraintById(long constraintNo);*/
 	
-	//----------------------------session,party,group,,role,resource,operation,constraint操作----------------------------------------
+	/*//----------------------------session,party,group,,role,resource,operation,constraint操作----------------------------------------
 	void createOrUpdateModel(IRabcModel model,RabcModelType type);
 	void batchCreateOrUpdateModel(Map<RabcModelType,IRabcModel>  models);
 	void batchCreateOrUpdateModel(List<IRabcModel>  models,List<RabcModelType> types);
@@ -77,7 +77,7 @@ public interface IPrivilegeManager {
 	List<IRabcRelatModel> findRelateModelByRightRelatNo(long relatNo,RabcModelType type);
 	List<IRabcRelatModel> findRelateModelByLeftRelatNos(List<Long> relatNos,RabcModelType type);
 	List<IRabcRelatModel> findRelateModelByRightRelatNos(List<Long> relatNos,RabcModelType type);
-	
+	*/
 	//----------------------------permission 操作-------------------------------------
 	
 	//----------------------------party-group 操作------------------------------------
