@@ -7,9 +7,11 @@ import com.huaxia.framework.security.rabc.model.IRabcRelatModel;
 
 public interface IRabcModelManager {
 
+	void batchSaveOrUpdate(List<IRabcModel> model);
+	
 	void saveOrUpdate(IRabcModel model);
 	
-	void delete(IRabcModel model);
+	void batchDelete(List<Long> modelNos);
 	
 	void delete(long modelNo);
 	
