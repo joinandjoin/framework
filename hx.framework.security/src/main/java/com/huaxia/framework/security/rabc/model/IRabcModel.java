@@ -34,4 +34,5 @@ public interface IRabcModel {
 	
 	String modelValue(String modelValue);
 	
+	boolean supportType();
 }
