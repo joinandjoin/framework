@@ -21,54 +21,54 @@ public class SimpleRabcRelateModel extends SimpleRabcModel implements IRabcRelat
 	
 
 	public SimpleRabcRelateModel(RabcModelType rabcModelType, long serialNo, String name, String code, long cateNo,
-			String cateName, int sortNo, String status, String value, Timestamp version,long leftModelNo,long rightModelNo) {
+			String cateName, int sortNo, String status, String value, Timestamp version,long leftModelNo,long rightModelNo)throws Exception {
 		super(rabcModelType, serialNo, name, code, cateNo, cateName, sortNo, status, value, version);
 		this.leftModelNo = leftModelNo;
 		this.rightModelNo = rightModelNo;
 	}
 
 	public SimpleRabcRelateModel(RabcModelType rabcModelType, long serialNo, String name, String code, long cateNo,
-			String cateName, int sortNo, String status, String value, Timestamp version,IRabcModel leftModel,IRabcModel rightModel) {
+			String cateName, int sortNo, String status, String value, Timestamp version,IRabcModel leftModel,IRabcModel rightModel)throws Exception {
 		super(rabcModelType, serialNo, name, code, cateNo, cateName, sortNo, status, value, version);
-		this.leftModelNo = leftModel.modelSerialNo(0l);
-		this.rightModelNo = rightModel.modelSerialNo(0l);
+		this.leftModelNo = leftModel.modelSerialNo();
+		this.rightModelNo = rightModel.modelSerialNo();
 		this.leftModel = leftModel;
 		this.rightModel = rightModel;
 	}
 
 	
-	public SimpleRabcRelateModel(RabcModelType rabcModelType) {
+	public SimpleRabcRelateModel(RabcModelType rabcModelType)throws Exception {
 		super(rabcModelType);
 	}
 	
 	@Override
-	public long leftModelNo(long leftModelNo) {
-		if (leftModelNo>0){
-			this.leftModelNo = leftModelNo;
+	public long leftModelNo(long... leftModelNo) {
+		if (CommonUtils.isNotNullEmpty(leftModelNo) && leftModelNo[0]>0){
+			this.leftModelNo = leftModelNo[0];
 		}
 		return this.leftModelNo;
 	}
 
 	@Override
-	public long rightModelNo(long rightModelNo) {
-		if (rightModelNo>0){
-			this.rightModelNo = rightModelNo;
+	public long rightModelNo(long... rightModelNo) {
+		if (CommonUtils.isNotNullEmpty(rightModelNo) && rightModelNo[0]>0){
+			this.rightModelNo = rightModelNo[0];
 		}
 		return this.rightModelNo;
 	}
 
 	@Override
-	public IRabcModel relatLeftModel(IRabcModel leftModel) {
-		if (CommonUtils.isNotNullEmpty(leftModel)){
-			this.leftModel = leftModel;
+	public IRabcModel relatLeftModel(IRabcModel... leftModel) {
+		if (CommonUtils.isNotNullEmpty(leftModel) && CommonUtils.isNotNullEmpty(leftModel[0])){
+			this.leftModel = leftModel[0];
 		}
 		return this.leftModel;
 	}
 
 	@Override
-	public IRabcModel relatRightModel(IRabcModel rightModel) {
-		if (CommonUtils.isNotNullEmpty(rightModel)){
-			this.rightModel = rightModel;
+	public IRabcModel relatRightModel(IRabcModel... rightModel) {
+		if (CommonUtils.isNotNullEmpty(rightModel) && CommonUtils.isNotNullEmpty(rightModel[0])){
+			this.rightModel = rightModel[0];
 		}
 		return this.rightModel;
 	}

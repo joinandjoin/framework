@@ -12,27 +12,27 @@ import com.huaxia.framework.common.enums.privilege.RabcModelType;
  */
 public interface IRabcModel {
 
-	RabcModelType rabcModeType(RabcModelType rabcModelType);
+	RabcModelType rabcModeType(RabcModelType rabcModelType) throws Exception;
 	
-	long modelSerialNo(long modelSerialNo);
+	long modelSerialNo(long... modelSerialNo);
 	
-	String modelName(String modelName);
+	String modelName(String... modelName);
 	
-	String modelCode(String modelCode);
+	String modelCode(String... modelCode);
 	
-	long modelCate(long modelCate);
+	long modelCate(long... modelCate);
 	
 	String modelCateName();
 	
 	String modelCateName(long modelCate);
 	
-	int modelSortNo(int sortNo);
+	int modelSortNo(int... sortNo);
 	
-	String modelStatus(String status);
+	String modelStatus(String... status);
 	
-	Timestamp modelVersion(Timestamp version);
+	Timestamp modelVersion(Timestamp... version);
 	
-	String modelValue(String modelValue);
+	String modelValue(String... modelValue);
 	
 	boolean supportType();
 }

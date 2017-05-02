@@ -3,6 +3,8 @@
  */
 package com.huaxia.framework.common.enums.privilege;
 
+import java.math.BigInteger;
+
 /**
  * @author shilei
  *
@@ -66,6 +68,14 @@ public enum ResourceOperations {
 		int tokey = key&(ResourceOperations.READ.val());
 		System.out.println(tokey==(ResourceOperations.READ.val()));
 		System.out.println(ResourceOperations.valueOfKey(64).name());
+		BigInteger num = new BigInteger("0"); 
+		for (int i=1;i<=195;i++){
+			num = num.setBit(i);
+		}
+		System.out.println(num);
+		System.out.println(num.testBit(2));  
+        System.out.println(num.testBit(196));  
+        System.out.println(num.testBit(3));
 		
 	}
 }

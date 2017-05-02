@@ -25,9 +25,10 @@ public class SimpleRabcModel implements IRabcModel,Serializable {
 	private Timestamp version = null;
 	
 	public SimpleRabcModel(RabcModelType rabcModelType, long serialNo, String name, String code, long cateNo,
-			String cateName, int sortNo, String status, String value, Timestamp version) {
+			String cateName, int sortNo, String status, String value, Timestamp version) throws Exception {
 		super();
 		this.rabcModelType = rabcModelType;
+		if (!this.supportType()) throw new Exception("not support RABC MODEL type");
 		this.serialNo = serialNo;
 		this.name = name;
 		this.code = code;
@@ -39,47 +40,49 @@ public class SimpleRabcModel implements IRabcModel,Serializable {
 		this.version = version;
 	}
 
-	public SimpleRabcModel(RabcModelType rabcModelType) {
+	public SimpleRabcModel(RabcModelType rabcModelType) throws Exception {
 		super();
 		this.rabcModelType = rabcModelType;
+		if (!this.supportType()) throw new Exception("not support RABC MODEL type");
 	}
 	
 	@Override
-	public RabcModelType rabcModeType(RabcModelType rabcModelType) {
+	public RabcModelType rabcModeType(RabcModelType rabcModelType) throws Exception {
 		if (null != rabcModelType){
 			this.rabcModelType = rabcModelType;
+			if (!this.supportType()) throw new Exception("not support RABC MODEL type");
 		}
 		return this.rabcModelType;
 	}
 
 	@Override
-	public long modelSerialNo(long modelSerialNo) {
-		if (modelSerialNo>0){
-			this.serialNo = modelSerialNo;
+	public long modelSerialNo(long... modelSerialNo) {
+		if (CommonUtils.isNotNullEmpty(modelSerialNo) && modelSerialNo[0]>0){
+			this.serialNo = modelSerialNo[0];
 		}
 		return this.serialNo;
 	}
 
 	@Override
-	public String modelName(String modelName) {
-		if (CommonUtils.isNotNullEmpty(modelName)){
-			this.name = modelName;
+	public String modelName(String... modelName) {
+		if (CommonUtils.isNotNullEmpty(modelName) && CommonUtils.isNotNullEmpty(modelName[0])){
+			this.name = modelName[0];
 		}
 		return this.name;
 	}
 
 	@Override
-	public String modelCode(String modelCode) {
-		if (CommonUtils.isNotNullEmpty(modelCode)){
-			this.code = modelCode;
+	public String modelCode(String... modelCode) {
+		if (CommonUtils.isNotNullEmpty(modelCode) && CommonUtils.isNotNullEmpty(modelCode[0])){
+			this.code = modelCode[0];
 		}
 		return this.code;
 	}
 
 	@Override
-	public long modelCate(long modelCate) {
-		if (modelCate>0){
-			this.cateNo = modelCate;
+	public long modelCate(long... modelCate) {
+		if (CommonUtils.isNotNullEmpty(modelCate) && modelCate[0]>0){
+			this.cateNo = modelCate[0];
 		}
 		return this.cateNo;
 	}
@@ -95,33 +98,33 @@ public class SimpleRabcModel implements IRabcModel,Serializable {
 	}
 
 	@Override
-	public int modelSortNo(int sortNo) {
-		if (sortNo>0){
-			this.sortNo = sortNo;
+	public int modelSortNo(int... sortNo) {
+		if (CommonUtils.isNotNullEmpty(sortNo) && sortNo[0]>0){
+			this.sortNo = sortNo[0];
 		}
 		return this.sortNo;
 	}
 
 	@Override
-	public String modelStatus(String status) {
-		if (CommonUtils.isNotNullEmpty(status)){
-			this.status = status;
+	public String modelStatus(String... status) {
+		if (CommonUtils.isNotNullEmpty(status) && CommonUtils.isNotNullEmpty(status[0])){
+			this.status = status[0];
 		}
 		return this.status;
 	}
 
 	@Override
-	public Timestamp modelVersion(Timestamp version) {
-		if (CommonUtils.isNotNullEmpty(version)){
-			this.version = version;
+	public Timestamp modelVersion(Timestamp... version) {
+		if (CommonUtils.isNotNullEmpty(version) && CommonUtils.isNotNullEmpty(version[0])){
+			this.version = version[0];
 		}
 		return this.version;
 	}
 
 	@Override
-	public String modelValue(String modelValue) {
-		if (CommonUtils.isNotNullEmpty(modelValue)){
-			this.value = modelValue;
+	public String modelValue(String... modelValue) {
+		if (CommonUtils.isNotNullEmpty(modelValue) && CommonUtils.isNotNullEmpty(modelValue[0])){
+			this.value = modelValue[0];
 		}
 		return this.value;
 	}
