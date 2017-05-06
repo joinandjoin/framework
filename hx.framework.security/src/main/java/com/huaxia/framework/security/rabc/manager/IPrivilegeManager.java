@@ -3,42 +3,80 @@
  */
 package com.huaxia.framework.security.rabc.manager;
 
+import java.util.List;
+
+import com.huaxia.framework.common.enums.privilege.RabcModelType;
+import com.huaxia.framework.security.rabc.model.IRabcModel;
+
 /**
  * @author shilei
  *
  */
 public interface IPrivilegeManager {
-
 	
-/*	//----------------------------session 操作----------------------------------------
-	void createOrUpdateSession(IRabcModel session);
+	/**
+	 * 
+	 * @param type 仅限于 PARTY("授权对象"),ROLE("角色"),RESOURCE("资源"),OPERATION("操作"),GROUP("分组"),CONSTRAINT("约束"),
+	 * @param modelCode
+	 * @param modelName
+	 * @param modelType
+	 * @param modelValue
+	 */
+	void createOrUpdateModel(RabcModelType type,String modelCode, String modelName, long modelType, 
+			String modelValue);
+	void deleteModel(long modelNo);
+	IRabcModel findModelById(long modelNo);
+	IRabcModel findModelByCode(String modelCode);
+	List<IRabcModel> findModelsByName(String modelName);
+	List<IRabcModel> findModelsByType(long modelType);
+	
+	//----------------------------session 操作----------------------------------------
+	void createOrUpdateSession(long partyNo,String sessionCode);
 	void deleteSession(long sessionNo);
 	IRabcModel findSession(String sessionCode);
-	//----------------------------party 操作-------------------------------------
-	void createOrUpdateParty(IRabcModel party);
+	
+/*	//----------------------------party 操作-------------------------------------
+	void createOrUpdateParty(String paryCode, String partyName, long partyType);
 	void deleteParty(long partyNo);
 	IRabcModel findPartyById(long partyNo);
-	//----------------------------group 操作------------------------------------------
-	void createOrUpdateGroup(IRabcModel group);
-	void deleteGroup(long groupNo);
-	IRabcModel findGroupById(long groupNo);
+	IRabcModel findPartyByCode(String paryCode);
+	List<IRabcModel> findPartysByName(String partyName);
+	List<IRabcModel> findPartysByType(long partyType);
 	//----------------------------role 操作-------------------------------------------
-	void createOrUpdateRole(IRabcModel role);
+	void createOrUpdateRole(String roleCode,String roleName);
 	void deleteRole(long roleNo);
 	IRabcModel findRoleById(long roleNo);
-	//----------------------------resource 操作---------------------------------------
-	void createOrUpdateResource(IRabcModel resource);
-	void deleteResource(long resourceNo);
-	IRabcModel findResourceById(long resource);
+	IRabcModel findRoleByCode(String roleCode);
+	List<IRabcModel> findRolesByName(String roleName);
 	//----------------------------operation 操作--------------------------------------
-	void createOrUpdateOperation(IRabcModel operation);
+	void createOrUpdateOperation(String operationCode, String operationName);
 	void deleteOperation(long operationNo);
 	IRabcModel findOperationById(long operationNo);
+	IRabcModel findOperationByCode(String operationCode);
+	List<IRabcModel> findOperationsByName(String operationName);
+	//----------------------------resource 操作---------------------------------------
+	void createOrUpdateResource(String resourceCode, String resourceName, long resourceType);
+	void deleteResource(long resourceNo);
+	IRabcModel findResourceById(long resourceNo);
+	IRabcModel findResourceByCode(String resourceCode);
+	List<IRabcModel> findResourcesByName(String resourceName);
+	List<IRabcModel> findResourcesByType(long resourceType);
+	//----------------------------group 操作------------------------------------------
+	void createOrUpdateGroup(String groupCode, String groupName, long groupType);
+	void deleteGroup(long groupNo);
+	IRabcModel findGroupById(long groupNo);
+	IRabcModel findGroupByCode(String groupCode);
+	List<IRabcModel> findGroupsByName(String groupName);
+	List<IRabcModel> findGroupsByType(long groupType);
 	//----------------------------constraint 操作-------------------------------------
-	void createOrUpdateConstraint(IRabcModel constraint);
+	void createOrUpdateConstraint(String constraintCode, String constraintName, long constraintType, 
+			String constraintValue);
 	void deleteConstraint(long constraintNo);
-	IRabcModel findConstraintById(long constraintNo);*/
-	
+	IRabcModel findConstraintById(long constraintNo);
+	IRabcModel findConstraintByCode(String constraintCode);
+	List<IRabcModel> findConstraintsByName(String constraintName);
+	List<IRabcModel> findConstraintsByType(long constraintType);*/
+
 	/*//----------------------------session,party,group,,role,resource,operation,constraint操作----------------------------------------
 	void createOrUpdateModel(IRabcModel model,RabcModelType type);
 	void batchCreateOrUpdateModel(Map<RabcModelType,IRabcModel>  models);
