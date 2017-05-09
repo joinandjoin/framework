@@ -22,6 +22,7 @@ public class SimpleRabcModel implements IRabcModel,Serializable {
 	private int sortNo = -1;
 	private String status = "1";
 	private String value = "";
+	private String modelCateCode="";
 	private Timestamp version = null;
 	
 	public SimpleRabcModel(RabcModelType rabcModelType, long serialNo, String name, String code, long cateNo,
@@ -40,6 +41,81 @@ public class SimpleRabcModel implements IRabcModel,Serializable {
 		this.version = version;
 	}
 
+	public SimpleRabcModel(RabcModelType rabcModelType, long serialNo, String name, String code, long cateNo, String value) throws Exception {
+		super();
+		this.rabcModelType = rabcModelType;
+		if (!this.supportType()) throw new Exception("not support RABC MODEL type");
+		this.serialNo = serialNo;
+		this.name = name;
+		this.code = code;
+		this.cateNo = cateNo;
+		this.cateName = "";
+		this.sortNo = -1;
+		this.status = "1";
+		this.value = value;
+		this.version = null;
+	}
+
+	public SimpleRabcModel(RabcModelType rabcModelType, long serialNo, String name, String code, String cateCode, String value) throws Exception {
+		super();
+		this.rabcModelType = rabcModelType;
+		if (!this.supportType()) throw new Exception("not support RABC MODEL type");
+		this.serialNo = serialNo;
+		this.name = name;
+		this.code = code;
+		this.modelCateCode = cateCode;
+		this.cateName = "";
+		this.sortNo = -1;
+		this.status = "1";
+		this.value = value;
+		this.version = null;
+	}
+	
+	public SimpleRabcModel(RabcModelType rabcModelType, long serialNo, String name, String code, long cateNo) throws Exception {
+		super();
+		this.rabcModelType = rabcModelType;
+		if (!this.supportType()) throw new Exception("not support RABC MODEL type");
+		this.serialNo = serialNo;
+		this.name = name;
+		this.code = code;
+		this.cateNo = cateNo;
+		this.cateName = "";
+		this.sortNo = -1;
+		this.status = "1";
+		this.value = "";
+		this.version = null;
+	}
+	
+	public SimpleRabcModel(RabcModelType rabcModelType, long serialNo, String name, String code, String cateCode) throws Exception {
+		super();
+		this.rabcModelType = rabcModelType;
+		if (!this.supportType()) throw new Exception("not support RABC MODEL type");
+		this.serialNo = serialNo;
+		this.name = name;
+		this.code = code;
+		this.modelCateCode = cateCode;
+		this.cateName = "";
+		this.sortNo = -1;
+		this.status = "1";
+		this.value = "";
+		this.version = null;
+	}
+	
+	public SimpleRabcModel(RabcModelType rabcModelType, long serialNo, String name, String code) throws Exception {
+		super();
+		this.rabcModelType = rabcModelType;
+		if (!this.supportType()) throw new Exception("not support RABC MODEL type");
+		this.serialNo = serialNo;
+		this.name = name;
+		this.code = code;
+		this.cateNo = 0;
+		this.cateName = "";
+		this.sortNo = -1;
+		this.status = "1";
+		this.value = "";
+		this.version = null;
+	}
+	
 	public SimpleRabcModel(RabcModelType rabcModelType) throws Exception {
 		super();
 		this.rabcModelType = rabcModelType;
@@ -80,9 +156,9 @@ public class SimpleRabcModel implements IRabcModel,Serializable {
 	}
 
 	@Override
-	public long modelCate(long... modelCate) {
-		if (CommonUtils.isNotNullEmpty(modelCate) && modelCate[0]>0){
-			this.cateNo = modelCate[0];
+	public long modelCateNo(long... modelCateNo) {
+		if (CommonUtils.isNotNullEmpty(modelCateNo) && modelCateNo[0]>0){
+			this.cateNo = modelCateNo[0];
 		}
 		return this.cateNo;
 	}
@@ -97,6 +173,14 @@ public class SimpleRabcModel implements IRabcModel,Serializable {
 		return null;
 	}
 
+	@Override
+	public String modelCateCode(String... modelCateCode) {
+		if (CommonUtils.isNotNullEmpty(modelCateCode) && CommonUtils.isNotNullEmpty(modelCateCode[0])){
+			this.modelCateCode = modelCateCode[0];
+		}
+		return this.modelCateCode;
+	}
+	
 	@Override
 	public int modelSortNo(int... sortNo) {
 		if (CommonUtils.isNotNullEmpty(sortNo) && sortNo[0]>0){
