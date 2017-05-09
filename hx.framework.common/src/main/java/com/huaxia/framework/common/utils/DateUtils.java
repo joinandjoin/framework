@@ -81,6 +81,7 @@ public class DateUtils {
                     formmater = DateTimeFormat.forPattern(pattern);
                 }
                 LocalDateParser localDateParser = new LocalDateParser(formmater);
+                date = localDateParser.parse(dateChars,null);
                 date = localDateParser.parse(dateChars, Locale.CHINA);
             }
 
@@ -234,6 +235,33 @@ public class DateUtils {
     }
 
     /**
+     * 以指定的日期时间字符串和其格式字符串构造Date对象
+     * 
+     * @param dateTimeChars
+     *            String 日期时间字符串
+     * @param pattern
+     *            String 日期时间格式串
+     * @return Date Date对象
+     * @author shilei
+     */
+    public static Date getDateTime(String dateTimeChars, String pattern) {
+        return new Date(getTimestamp(dateTimeChars, pattern).getTime());
+    }
+
+    
+    /**
+     * 以配置"yyyy-MM-dd HH:mm:ss" 格式的日期时间字符串构造Date对象
+     * 
+     * @param dateTimeChars
+     *            String "yyyy-MM-dd HH:mm:ss"格式的日期时间字符串
+     * @return Date Date对象
+     * @author shilei
+     */
+    public static Date getDateTime(String dateTimeChars) {
+        return new Date(getTimestamp(dateTimeChars, null).getTime());
+    }
+    
+    /**
      * 以配置"yyyy-MM-dd HH:mm:ss" 格式的日期时间字符串构造Date对象
      * 
      * @param dateTimeChars
@@ -242,7 +270,7 @@ public class DateUtils {
      * @author shilei
      */
     public static Date getDate(String dateTimeChars) {
-        return new Date(getTimestamp(dateTimeChars, null).getTime());
+    	return getDate(dateTimeChars, null,null).toDate();
     }
 
     /**
@@ -256,9 +284,9 @@ public class DateUtils {
      * @author shilei
      */
     public static Date getDate(String dateTimeChars, String pattern) {
-        return new Date(getTimestamp(dateTimeChars, pattern).getTime());
+    	return getDate(dateTimeChars, pattern,null).toDate();
     }
-
+    
     /**
      * 以yyyy-MM-dd HH:mm:ss的字符形式返回当前时间
      * 
@@ -379,4 +407,8 @@ public class DateUtils {
         LocalDateTime increaseTime = dateTime.plusDays(intBetween);
         return increaseTime.toDate();
     }
+    
+    public static void main(String[] args) {
+    	System.out.println(getDate("2017-05-09"));
+	}
 }
