@@ -273,6 +273,7 @@ public class CommonDaoImpl extends AbstractBaseDao implements ICommonDAO {
 				i++;
 			}
 		} catch (Exception ex) {
+			super.roolback(conn);
 			throw new OrmDataAccessException("ERROR_CODE_QUERY_SYSDATE_0001",ex);
 		} finally {
 			JdbcUtils.closeResultSet(rs);

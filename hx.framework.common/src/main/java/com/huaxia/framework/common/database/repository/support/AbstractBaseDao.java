@@ -1,6 +1,7 @@
 package com.huaxia.framework.common.database.repository.support;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
@@ -123,7 +124,29 @@ public abstract class AbstractBaseDao  {
 	 * @param con Connection to close
 	 * @see org.springframework.jdbc.datasource.DataSourceUtils#releaseConnection
 	 */
-	protected final void releaseConnection(Connection con) {
-		DataSourceUtils.releaseConnection(con, getDataSource());
+	protected final void releaseConnection(Connection conn) {
+		try {
+			boolean isConnectionTransactional = DataSourceUtils.isConnectionTransactional(conn, getDataSource());
+			if (conn != null && !isConnectionTransactional && !conn.getAutoCommit()) {
+				
+				conn.commit();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DataSourceUtils.releaseConnection(conn, getDataSource());
+		}
+	}
+	
+	protected void roolback(Connection conn){
+		try {
+			boolean isConnectionTransactional = DataSourceUtils.isConnectionTransactional(conn, getDataSource());
+			if (conn != null && !isConnectionTransactional && !conn.getAutoCommit()) {
+				
+				conn.rollback();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }
