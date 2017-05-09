@@ -20,7 +20,9 @@ public interface IRabcModel {
 	
 	String modelCode(String... modelCode);
 	
-	long modelCate(long... modelCate);
+	long modelCateNo(long... modelCateNo);
+	
+	String modelCateCode(String... modelCateCode);
 	
 	String modelCateName();
 	

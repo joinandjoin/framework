@@ -22,17 +22,24 @@ public interface IPrivilegeManager {
 	 * @param modelType
 	 * @param modelValue
 	 */
-	void createOrUpdateModel(RabcModelType type,String modelCode, String modelName, long modelType, 
+	IRabcModel createOrUpdateModel(RabcModelType type,String modelCode, String modelName, long modelCate, 
 			String modelValue);
+	
 	void deleteModel(long modelNo);
+	
 	IRabcModel findModelById(long modelNo);
+	
 	IRabcModel findModelByCode(String modelCode);
+	
 	List<IRabcModel> findModelsByName(String modelName);
-	List<IRabcModel> findModelsByType(long modelType);
+	
+	List<IRabcModel> findModelsByCate(long modelCate);
 	
 	//----------------------------session 操作----------------------------------------
 	void createOrUpdateSession(long partyNo,String sessionCode);
+	
 	void deleteSession(long sessionNo);
+	
 	IRabcModel findSession(String sessionCode);
 	
 /*	//----------------------------party 操作-------------------------------------
