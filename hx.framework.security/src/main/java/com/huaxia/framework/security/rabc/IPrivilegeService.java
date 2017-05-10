@@ -13,6 +13,5 @@ package com.huaxia.framework.security.rabc;
  *
  */
 public interface IPrivilegeService {
-
 	
 }

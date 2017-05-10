@@ -61,6 +61,7 @@ public enum ResourceOperations {
 		}
 		return null;
 	}
+	
 	public static void main(String[] args) {
 		int key = ResourceOperations.UPDATE.val()|ResourceOperations.CREATE.val();
 		System.out.println(key);
