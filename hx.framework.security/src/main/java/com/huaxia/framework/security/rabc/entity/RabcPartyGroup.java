@@ -17,6 +17,7 @@ public class RabcPartyGroup implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="serial_no")
 	private String serialNo;
 
