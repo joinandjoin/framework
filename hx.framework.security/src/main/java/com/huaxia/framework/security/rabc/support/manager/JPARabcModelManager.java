@@ -6,7 +6,7 @@ import com.huaxia.framework.common.database.repository.ICommonDAO;
 import com.huaxia.framework.common.enums.privilege.RabcModelType;
 import com.huaxia.framework.security.rabc.manager.IRabcModelManager;
 
-public class JdbcRabcModelManager implements IRabcModelManager {
+public class JPARabcModelManager implements IRabcModelManager {
 	
 	@Autowired
 	private ICommonDAO commonDao;
