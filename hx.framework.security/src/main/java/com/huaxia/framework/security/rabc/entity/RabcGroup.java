@@ -1,9 +1,16 @@
 package com.huaxia.framework.security.rabc.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import java.sql.Timestamp;
 import java.math.BigInteger;
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 
 /**
@@ -13,7 +20,7 @@ import java.math.BigInteger;
 @Entity
 @Table(name="rabc_group")
 @NamedQuery(name="RabcGroup.findAll", query="SELECT r FROM RabcGroup r")
-public class RabcGroup implements Serializable {
+public class RabcGroup implements Serializable,IRabcEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -88,12 +95,14 @@ public class RabcGroup implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public BigInteger getRelateGroupNo() {
+	
+	@Override
+	public BigInteger getRelateGroupNo() throws Exception {
 		return this.relateGroupNo;
 	}
 
-	public void setRelateGroupNo(BigInteger relateGroupNo) {
+	@Override
+	public void setRelateGroupNo(BigInteger relateGroupNo) throws Exception {
 		this.relateGroupNo = relateGroupNo;
 	}
 
@@ -144,5 +153,4 @@ public class RabcGroup implements Serializable {
 	public void setVersion(Timestamp version) {
 		this.version = version;
 	}
-
 }

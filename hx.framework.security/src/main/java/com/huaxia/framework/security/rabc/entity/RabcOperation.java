@@ -13,7 +13,7 @@ import java.math.BigInteger;
 @Entity
 @Table(name="rabc_operation")
 @NamedQuery(name="RabcOperation.findAll", query="SELECT r FROM RabcOperation r")
-public class RabcOperation implements Serializable {
+public class RabcOperation implements Serializable,IRabcEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -123,5 +123,4 @@ public class RabcOperation implements Serializable {
 	public void setVersion(Timestamp version) {
 		this.version = version;
 	}
-
 }

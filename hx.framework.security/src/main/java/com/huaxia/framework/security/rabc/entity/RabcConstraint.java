@@ -13,7 +13,7 @@ import java.math.BigInteger;
 @Entity
 @Table(name="rabc_constraint")
 @NamedQuery(name="RabcConstraint.findAll", query="SELECT r FROM RabcConstraint r")
-public class RabcConstraint implements Serializable {
+public class RabcConstraint implements Serializable,IRabcEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -64,12 +64,14 @@ public class RabcConstraint implements Serializable {
 	public void setCode(String code) {
 		this.code = code;
 	}
-
-	public String getConstraintExp() {
+	
+	@Override
+	public String getConstraintExp() throws Exception {
 		return this.constraintExp;
 	}
-
-	public void setConstraintExp(String constraintExp) {
+	
+	@Override
+	public void setConstraintExp(String constraintExp) throws Exception {
 		this.constraintExp = constraintExp;
 	}
 
@@ -144,5 +146,4 @@ public class RabcConstraint implements Serializable {
 	public void setVersion(Timestamp version) {
 		this.version = version;
 	}
-
 }

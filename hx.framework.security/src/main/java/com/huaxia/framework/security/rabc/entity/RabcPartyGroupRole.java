@@ -13,7 +13,7 @@ import java.math.BigInteger;
 @Entity
 @Table(name="rabc_party_group_role")
 @NamedQuery(name="RabcPartyGroupRole.findAll", query="SELECT r FROM RabcPartyGroupRole r")
-public class RabcPartyGroupRole implements Serializable {
+public class RabcPartyGroupRole implements Serializable, IRabcEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id

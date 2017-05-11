@@ -13,7 +13,7 @@ import java.math.BigInteger;
 @Entity
 @Table(name="rabc_party_constraint")
 @NamedQuery(name="RabcPartyConstraint.findAll", query="SELECT r FROM RabcPartyConstraint r")
-public class RabcPartyConstraint implements Serializable {
+public class RabcPartyConstraint implements Serializable, IRabcEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id

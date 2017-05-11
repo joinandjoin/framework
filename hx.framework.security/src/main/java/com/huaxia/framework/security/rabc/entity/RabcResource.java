@@ -1,9 +1,16 @@
 package com.huaxia.framework.security.rabc.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import java.sql.Timestamp;
 import java.math.BigInteger;
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 
 /**
@@ -13,7 +20,7 @@ import java.math.BigInteger;
 @Entity
 @Table(name="rabc_resource")
 @NamedQuery(name="RabcResource.findAll", query="SELECT r FROM RabcResource r")
-public class RabcResource implements Serializable {
+public class RabcResource implements Serializable,IRabcEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id

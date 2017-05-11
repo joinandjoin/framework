@@ -13,7 +13,7 @@ import java.math.BigInteger;
 @Entity
 @Table(name="rabc_role_constraint")
 @NamedQuery(name="RabcRoleConstraint.findAll", query="SELECT r FROM RabcRoleConstraint r")
-public class RabcRoleConstraint implements Serializable {
+public class RabcRoleConstraint implements Serializable, IRabcEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
